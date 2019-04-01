@@ -1,0 +1,40 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Spatnav sanity check</title>
+<link rel="author" title="Jihye Hong" href="jh.hong@lge.com">
+<meta name=flags content="">
+<link rel=help href="https://wicg.github.io/spatial-navigation/#high-level-api">
+
+<!--load polyfill. To be removed before submitting to WPT-->
+<script src="../../../polyfill/spatial-navigation-polyfill.js"></script>
+
+<style>
+  .box {
+    position: relative;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    border: 1px black solid;
+    background: #6ac;
+    text-align: center;
+  }
+
+  :focus {
+    outline: 4px solid blue;
+  }
+</style>
+
+<body>
+  <div id="container" style="height: 500px;">
+    <div tabindex="0" class="box"></div>
+    <div tabindex="0" class="box" style="left: 100px; top: -100px;"></div>
+    <div tabindex="0" id="initial_focus" class="box" id="up_focus" style="left: calc(100px * 2); top: calc(-100px * 2);">Initial Focus</div>
+    <div tabindex="0" class="box" style="top: calc(-100px * 2);"></div>
+    <div tabindex="0" class="box" id="green" style="left: 100px; top: calc(-100px * 3); background-color: seagreen;"></div>
+    <div class="box" id="nonFocusable" style="left: calc(100px * 2); top: calc(-100px * 4); background-color: lightgray;">non-focusable</div>
+    <div tabindex="0" class="box" id="yellow" style="top: calc(-100px * 4); background-color: yellow;"></div>
+    <div tabindex="0" class="box" id="maroon" style="left: 100px; top: calc(-100px * 5); background-color: maroon;"></div>
+    <div tabindex="0" class="box" id="purple" style="left: calc(100px * 2); top: calc(-100px * 6); background-color: slateblue;"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Spatnav sanity check</title>
+<link rel="author" title="Jihye Hong" href="jh.hong@lge.com">
+<meta name=flags content="">
+<link rel=help href="https://wicg.github.io/spatial-navigation/#high-level-api">
+
+<!--load polyfill. To be removed before submitting to WPT-->
+<script src="../../../polyfill/spatial-navigation-polyfill.js"></script>
+
+<style>
+  #container {
+    margin: 10px;
+    position: relative;
+    border: 1px solid black;
+    height: 500px;
+  }
+
+  .box {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px black solid;
+    background: #6ac;
+    text-align: center;
+    margin: auto auto;
+  }
+
+  :focus {
+    outline: 3px solid red;
+  }
+</style>
+
+<body>
+
+<div id="container">
+  <div tabindex="0" class="box" id="initial_focus" style="width:640px; height: 76px; left: 60px; top: 145px;"></div>
+  <div tabindex="0" class="box" id="box1" style="width:360px; height: 80px; left: 60px; top: 260px;">Box 1</div>
+  <div tabindex="0" class="box" id="box2" style="width:100px; height: 20px; left: 385px; top: 230px;">Box 2</div>
+</div>
+</body>
+</html>
